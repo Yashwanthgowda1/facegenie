@@ -3,14 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="facegenie1.loginpage1">
+      <class name="facegenie1.mangestudentstestscripts">
         <methods>
           <include name="m1"/>
-          <include name="logintoappliactionandintilizethepom"/>
-          <include name="openbrowser"/>
-          <include name="quittheappliacton"/>
+          <include name="methodconfigration"/>
+          <include name="closethebrowser"/>
+          <include name="methodteardown"/>
+          <include name="classconfigration"/>
         </methods>
-      </class> <!-- facegenie1.loginpage1 -->
+      </class> <!-- facegenie1.mangestudentstestscripts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

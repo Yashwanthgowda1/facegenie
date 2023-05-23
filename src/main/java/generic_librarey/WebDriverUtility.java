@@ -1,4 +1,4 @@
-package gegenriclibrareys;
+package generic_librarey;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +22,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class WebDriverutility {
+public class WebDriverUtility {
 	private WebDriver driver;
 	private Actions a;
 	private Select s;
@@ -66,33 +66,12 @@ public class WebDriverutility {
 
 		return driver;
 
-		
 	}
 
 	public WebElement explicitWait(WebElement element, long time) {
 		WebDriverWait wait = new WebDriverWait(driver, time);
 		WebElement e = wait.until(ExpectedConditions.visibilityOf(element));
 		return e;
-	}
-	
-	public String explicitlywait(long time, String titel) {
-		WebDriverWait wait=new WebDriverWait(driver, time);
-		boolean a =wait.until(ExpectedConditions.titleContains(titel));
-		if(a)
-			return "pass";
-		else
-			return "fail";
-		
-	}
-	
-	
-	
-	
-	/**
-	 * navigable class
-	 */
-	public void navigationrefresh() {
-		driver.navigate().refresh();
 	}
 
 	/**
@@ -166,8 +145,10 @@ public class WebDriverutility {
 		try {
 			FileUtils.copyFile(src, dest);
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 	}
 
 	// example for method overloading
@@ -286,10 +267,6 @@ public class WebDriverutility {
 		}
 
 	}
-	public String handelpops() {
-		a1 = driver.switchTo().alert();
-		return	a1.getText();
-	}
 
 	/**
 	 * this method is used to handel the parent browser address
@@ -323,6 +300,4 @@ public class WebDriverutility {
 	public void quitBrowser() {
 		driver.quit();
 	}
-
-
 }

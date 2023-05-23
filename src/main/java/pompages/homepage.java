@@ -13,11 +13,13 @@ private WebElement Dashboard;
 
 @FindBy( xpath = "//span[text()=\"Attendance Logs\"]")
 private WebElement AttendanceLogs;
+
 @FindBy( xpath = "//span[text()=\"Analytics and Reports\"]")
 private WebElement AnalyticsandReports;
 
-@FindBy( xpath = "//span[text()=\"Manage Student\"]")
+@FindBy( xpath = "//div[@style=\"margin: 10px 0px;\"][4]")
 private WebElement ManageStudent;
+
 @FindBy( xpath = "//span[text()=\"Manage Licenses\"]")
 private WebElement ManageLicenses;
 
@@ -32,12 +34,20 @@ private WebElement Setting;
 private WebElement LogOut;
 @FindBy(xpath = "//p[text()='test101@gmail.com']")
 private WebElement logincredantial;
-
+/**
+ * 
+ * intilization
+ * @param driver
+ */
 
 public homepage(WebDriver driver) {
 	PageFactory.initElements(driver, this);
 }
-
+/**
+ * 
+ * utilization
+ * @return       
+ */
 
 
 public WebElement getlogincredantial() {

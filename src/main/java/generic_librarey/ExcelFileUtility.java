@@ -1,16 +1,24 @@
-package gegenriclibrareys;
+package generic_librarey;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-public class ExcelFileutility {
+/**
+ * it contains reusable method with respect is excel
+ * 
+ * @author yashu
+ *
+ */
+public class ExcelFileUtility {// excel file
 	private Workbook wb;
 
 	/**
@@ -74,12 +82,15 @@ public class ExcelFileutility {
 
 	}
 	
+	public void closeWorkBook(){
 	
-		
+
+	try {
+		wb.close();
 	}
-	
-	
-	
-	
-
-
+	catch(IOException e)
+	{
+			e.printStackTrace();
+		}
+	}
+}

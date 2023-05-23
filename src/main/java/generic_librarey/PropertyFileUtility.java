@@ -1,23 +1,27 @@
-package gegenriclibrareys;
+package generic_librarey;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Properties;import org.apache.hc.core5.http.Message;
-
-public class Propertyfileutility {
-
+import java.util.Properties;
+/**
+ * this class contains reusable methods for actions performed on property file
+ * @author yashu
+ *
+ */
+public class PropertyFileUtility {
+	
+	
+	
 	private Properties property;
 	/**
 	 * this method is used to initilize property file
 	 * @param filepath
 	 * @param Key
-	 * 
-
 	 */
 public void propertyconfg(String filepath ) {
-	FileInputStream fis=null;//filenotfoundexception
+	FileInputStream fis=null;
 	try {
 	
 	fis=new FileInputStream(filepath);
@@ -26,7 +30,7 @@ public void propertyconfg(String filepath ) {
 		e.printStackTrace();
 	}
 	
-	property=new Properties();//create a instance of property class
+	property=new Properties();
 	try {
 		property.load(fis);
 	}
@@ -44,39 +48,38 @@ public void propertyconfg(String filepath ) {
 	 * @return
 	 */
 
-public String fetchproperty(String key) {//by passing a value fetching a data
+public String fetchproperty(String key) {
 	
 	return property.getProperty(key);
 }
 
 /**
  * this method is used to write the data into property file
- * @param key 
  * @param key
- * @param value 
  * @param value
- * @param filepath 
- * @param message 
  * @param filePath
  * @param message
  */
-public void setDataToprorprty(String key, String value, String filepath, String message) {
+public void setDataToprorprty(String key, String value,String filePath,String message) {
+	
 	property.put(key, value);
-	FileOutputStream fos;
-
+	
 	try {
-		property.store(new FileOutputStream(filepath), message);
-	} catch (FileNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+		property.store(new FileOutputStream(filePath), message);
+	
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
+}
+
 	
 	
+
+
+
+
 
 	
 }
 
-}
